@@ -31,3 +31,8 @@ NOTA 2:  Para que no muestre el mensaje de error ejecutamos UNSAFE_componentWill
 -  creamos variable de estado value que se actualizará con el onChange del input
 - creamos condicional para dejar de mostrar el cargando y mostrar el error si la entrada del usuario no coincide con la palabra de seguridad
 - NOTA: El problema de los estados independientes es que si tenemos funcionalidades que cambian varios estados, tenemos que llamar cada actualizador por separado. En codigos mucho mas grandes esto puede volverle complicado.
+
+# Estados Compuestos con componentes de clase
+- Le agregamos otra condicion para mostrar el parrafo de Error en el componente de funcion.
+- creamos el nuevo estado para el value del input.
+- Creamos el metodo onChange para actualizar ese valor.

@@ -8,7 +8,7 @@ function UseState({name}){
     const [loading, setLoading] = React.useState(false);
 
     React.useEffect(()=> {
-        console.log('Empezando el efecto');
+        //console.log('Empezando el efecto');
 
         if(loading){
             setTimeout(()=>{
@@ -27,7 +27,7 @@ function UseState({name}){
             },3000);
         }
 
-        console.log('Terminando el efecto');
+        //console.log('Terminando el efecto');
     },[loading])
     return(
         <div>
@@ -35,7 +35,7 @@ function UseState({name}){
                 
                 <p>Por favor, Escribe le codigo de seguridad</p>
                 
-                {error && (
+                {(error && !loading) && (
                     <p>Error: El codigo es incorrecto</p>
                 )}
 
