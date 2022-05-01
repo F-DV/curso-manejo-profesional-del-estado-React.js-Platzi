@@ -8,7 +8,6 @@ function UseState({name}){
         console.log('Empezando el efecto');
 
         if(loading){
-
             setTimeout(()=>{
                 console.log('Haciendo la validación');
     

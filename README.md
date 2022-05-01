@@ -16,3 +16,13 @@
 
 # Efectos con useEffect
 - Se crea un estado para mostrar un mensjae de carga en un parrafo simulando un request al backend
+
+# Metodos de ciclo de vida en Componentes de clase
+NOTA: REACT 18  ya no recomienda usar los metodos de ciclo de vida.
+NOTA 2:  Para que no muestre el mensaje de error ejecutamos UNSAFE_componentWillMount().
+
+- componentWillMount() : Ejecuta cuando renderiza
+- componentWillUnMount(): SeEjecuta cuando termina de renderizar
+- componentWillDidMount(): Se ejecuta cuando DesRenderizamos.
+- componentDidUpdate() : Se ajecuta a cada renderizado.
+- Creamos componente Loading para visualizar el componentWillUnMont
