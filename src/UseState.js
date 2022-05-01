@@ -1,14 +1,22 @@
 import React from "react";
 
-function UseState(){
+function UseState({name}){
+    const [error,setError] = React.useState(false);
+
     return(
         <div>
-                <h2>Eliminar UseState</h2>
+                <h2>Eliminar {name}</h2>
                 
                 <p>Por favor, Escribe le codigo de seguridad</p>
                 
+                {error && (
+                    <p>Error: El codigo es incorrecto</p>
+                )}
+
                 <input placeholder="Código de Seguridad"/>
-                <button>Comprobar</button>
+                <button
+                    onClick={()=> setError(!error)}
+                >Comprobar</button>
 
             </div>
     );
