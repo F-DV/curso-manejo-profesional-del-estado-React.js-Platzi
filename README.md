@@ -36,3 +36,7 @@ NOTA 2:  Para que no muestre el mensaje de error ejecutamos UNSAFE_componentWill
 - Le agregamos otra condicion para mostrar el parrafo de Error en el componente de funcion.
 - creamos el nuevo estado para el value del input.
 - Creamos el metodo onChange para actualizar ese valor.
+
+# Estados compuestos con useState
+- Creamos un state para almacenar todos los estados juntos
+- ADVERTENCIA: utilizar el sprit operation en el setState
