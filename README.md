@@ -73,4 +73,9 @@ NOTA 2:  Para que no muestre el mensaje de error ejecutamos UNSAFE_componentWill
 - condicionamos el return del componente de estado para mostrar una navegacion basica
 
 # Estados semideclarativos con useState
-- Creamos funciones aparte para las actualizaciones de los estados
+- Creamos funciones aparte para las actualizaciones de los estados.
+
+# 3 Formas de Crear Reducer
+- Primera Forma con if/Else
+- Segunda Forma con Switch
+- Tercera Forma ReducerObjects
