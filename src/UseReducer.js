@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 
 const SECURITY_CODE = 'paradigma';
@@ -5,18 +6,23 @@ const SECURITY_CODE = 'paradigma';
 function UseReducer({name}){
     const [state, dispatch] = React.useReducer(reducer, initialState);
 
+    const onConfirm = ()=>dispatch({type:actionTypes.confirm});
+    const onError = ()=>dispatch({type:actionTypes.error});
+    const onCheck = ()=>dispatch({type:actionTypes.check}); 
+    const onDelete = ()=>dispatch({type:actionTypes.delete});
+    const onReset = ()=>dispatch({type:actionTypes.reset});
+    const onWrite = (event)=>{
+        dispatch({type:actionTypes.write,
+            payload:event.target.value})
+    }
     React.useEffect(()=> {
         if(state.loading){
             setTimeout(()=>{
                 console.log('Haciendo la validación');
                 if(state.value === SECURITY_CODE){
-                    dispatch({
-                        type:'CONFIRM',
-                    })              
+                    onConfirm()            
                 }else {
-                    dispatch({
-                        type:'ERROR',
-                    })   
+                    onError(); 
                 }
                 console.log('Terminando la validación');
             },3000);
@@ -41,17 +47,10 @@ function UseReducer({name}){
                 <input
                     placeholder="Código de Seguridad"
                     value={state.value}
-                    onChange={(event) => {
-                       dispatch({
-                           type:'WRITE',
-                           payload: event.target.value,
-                       });
-                    }}    
+                    onChange={onWrite}
                 />
                  <button
-                    onClick={()=> dispatch({
-                        type:'CHECK',
-                    })}
+                    onClick={onCheck}
 
                 >Comprobar
                 </button> 
@@ -63,16 +62,12 @@ function UseReducer({name}){
             <React.Fragment>
                 <p>Pedimos de confirmación ¿Tas Segurx?</p>
                 <button
-                    onClick={()=>dispatch({
-                        type:'DELETE'
-                    })}
+                    onClick={onDelete}
                 >
                     Si, Eliminar
                 </button>
                 <button
-                    onClick={()=>dispatch({
-                        type:'RESET'
-                    })}
+                    onClick={onReset}
                 >
                     No,Me arrepentí
                 </button>
@@ -83,9 +78,7 @@ function UseReducer({name}){
             <React.Fragment>
                 <p>Eliminado con Éxito</p>
                 <button
-                    onClick={()=> dispatch({
-                        type:'RESET'
-                    })}
+                    onClick={onReset}
                 >
                     Resetear
                 </button>
@@ -93,6 +86,15 @@ function UseReducer({name}){
         );
     } 
     
+}
+const actionTypes = {
+    confirm:'CONFIRM',
+    error: 'ERROR',
+    delete: 'DELETE',
+    write: 'WRITE',
+    reset: 'RESET',
+    check: 'CHECK',
+
 }
 const initialState = {
     value: '',
@@ -104,39 +106,39 @@ const initialState = {
 const reducer = (state,action) =>{
     
     switch(action.type){
-        case 'CONFIRM':    
+        case actionTypes.confirm:    
             return{
                 ...state,
                 loading:false,
                 error:false,
                 confirmed: true,}
             break;
-        case 'DELETE':
+        case actionTypes.delete:
             return{
                 ...state,
                 deleted: true,}
                 break;
-        case 'ERROR':
+        case actionTypes.error:
             return{
                 ...state,
                 loading:false,
                 error:true
             }
             break;
-        case 'WRITE':
+        case actionTypes.write:
             return{
                 ...state,
                 value: action.payload,
             }
 
             break;
-        case 'CHECK':
+        case actionTypes.check:
             return{
                 ...state,
                 loading:true
             }
             break;
-        case 'RESET':
+        case actionTypes.reset:
             return{
                 ...state,
                 confirmed: false,
