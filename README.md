@@ -79,3 +79,8 @@ NOTA 2:  Para que no muestre el mensaje de error ejecutamos UNSAFE_componentWill
 - Primera Forma con if/Else
 - Segunda Forma con Switch
 - Tercera Forma ReducerObjects
+
+# Estados Declarativos con useReducer
+- Utilizamos la forma 2 con switch.
+- Usamos el Hook useReducer().  
+- El segundo argumento del useReducer es un dispatch, este evnia el type del action que llega al reducer.
