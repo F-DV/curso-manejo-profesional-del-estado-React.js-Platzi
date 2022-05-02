@@ -44,3 +44,6 @@ NOTA 2:  Para que no muestre el mensaje de error ejecutamos UNSAFE_componentWill
 # Estados Imperactivos con useState
 - Es la forma de decirle a nuestro codigo paso a paso que debe hacer.
 - condicionamos el return del componente de estado para mostrar una navegacion basica
+
+# Estados semideclarativos con useState
+- Creamos funciones aparte para las actualizaciones de los estados
