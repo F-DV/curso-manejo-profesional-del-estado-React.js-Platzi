@@ -2,7 +2,7 @@ import React from "react";
 
 class Loading extends React.Component{
     
-    componentWillUnMount(){
+    componentWillUnmount(){
         console.log("componentWillUnMount")
     }
     

@@ -22,7 +22,7 @@ NOTA: REACT 18  ya no recomienda usar los metodos de ciclo de vida.
 NOTA 2:  Para que no muestre el mensaje de error ejecutamos UNSAFE_componentWillMount().
 
 - componentWillMount() : Ejecuta cuando renderiza
-- componentWillUnMount(): SeEjecuta cuando termina de renderizar
+- componentWillUnmount(): SeEjecuta cuando termina de renderizar
 - componentWillDidMount(): Se ejecuta cuando DesRenderizamos.
 - componentDidUpdate() : Se ajecuta a cada renderizado.
 - Creamos componente Loading para visualizar el componentWillUnMont.
@@ -38,5 +38,9 @@ NOTA 2:  Para que no muestre el mensaje de error ejecutamos UNSAFE_componentWill
 - Creamos el metodo onChange para actualizar ese valor.
 
 # Estados compuestos con useState
-- Creamos un state para almacenar todos los estados juntos
-- ADVERTENCIA: utilizar el sprit operation en el setState
+- Creamos un state para almacenar todos los estados juntos.
+- ADVERTENCIA: utilizar el sprit operation en el setState.
+
+# Estados Imperactivos con useState
+- Es la forma de decirle a nuestro codigo paso a paso que debe hacer.
+- condicionamos el return del componente de estado para mostrar una navegacion basica
